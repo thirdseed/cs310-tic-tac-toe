@@ -18,13 +18,17 @@ public class TicTacToeView {
 	
     public TicTacToeMove getNextMove(boolean isXTurn) {
         
-        /* Prompt the player to enter the row and the column of their next move.
-           Return as a TicTacToeMove object. */
+        System.out.println("\nPlayer " + (isXTurn ? "1 (X)" : "2 (O)") + " Move:");
+        System.out.println("Enter the row and column numbers, separated by a space: ");
         
-        // INSERT YOUR CODE HERE
-
-        return null; // remove this line later!
-
+        /*
+         * To avoid the utilization of RegEx and/or per-character `String`
+         * parsing, we will assume that, regardless of form entered, the first
+         * two `int`s from the user's response are their desired row and column,
+         * respectively
+        */
+        
+        return new TicTacToeMove(keyboard.nextInt(), keyboard.nextInt());
     }
 
     public void showInputError() {
