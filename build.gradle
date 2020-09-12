@@ -1,18 +1,18 @@
 buildscript {
     dependencies {
         classpath files(mkdir('build/classes/java/main'))
+		classpath 'org.robotframework:swinglibrary:1.9.6'
     }
 }
 
 plugins {
-    id 'org.roboscratch.robot' version '0.1.1'
+  id 'org.roboscratch.robot' version '0.1.1'
 }
-
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
-sourceCompatibility = 1.8
-version = '1.0'
+sourceCompatibility = 1.7
+version = '2.0'
 
 jar {
     manifest {
@@ -50,7 +50,7 @@ uploadArchives {
     }
 }
 
-if (hasProperty("Xlint:unchecked")) {
+if(hasProperty("Xlint:unchecked")) {
     tasks.withType(JavaCompile) { 
         options.compilerArgs << "-Xlint:unchecked" 
     }
